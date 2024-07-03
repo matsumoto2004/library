@@ -4,10 +4,10 @@ class prime {
 public:
     prime(T n) : n(n) {}
     
-    map<int, int> factor_list() {
+    map<T, int> factor_list() {//int -> T ちょっと書き換えた
         if (n == 1) return {};
         T nn = n;
-        map<int, int> ret;
+        map<T, int> ret;
         for (int i = 2; (ll) i * i <= n; i++) {
             if (nn % i != 0) continue;
             int cnt = 0;
@@ -29,7 +29,7 @@ public:
     
     bool is_prime() {
         auto v = factor_list();
-        return v.size() == 1 && v[0].second == 1;
+        return v.size() == 1 && (*v.begin()).second == 1;//v[0].second==1ではないと思う
     }
     
     int count_divisor() {
@@ -37,7 +37,7 @@ public:
         map<int, int> fl = factor_list(n);
         for (auto p : fl) ret *= p.second + 1;
         return ret;
-    };
+    }; 
     
     vector <T> enum_divisors() {
         vector <T> res;

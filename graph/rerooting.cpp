@@ -48,6 +48,7 @@ public:
 struct D {
     using T = ;
     
+    //constexprじゃないと落ちるかも
     static const T id = ;
     
     static T merge(const T &a, const T &b) {

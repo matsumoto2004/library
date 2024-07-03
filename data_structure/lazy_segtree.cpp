@@ -47,6 +47,8 @@ public:
         update(p >> i);
     }
     
+    //よくわからないのでけした
+    /*
     template<class F>
     void apply(int p, const F &f) {
         assert(0 <= p and p < _n);
@@ -57,6 +59,7 @@ public:
         rep(i, 1, log + 1)
         update(p >> i);
     }
+    */
     
     S get(int p) {
         assert(0 <= p and p < _n);

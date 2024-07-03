@@ -69,7 +69,7 @@ public:
     }
 };
 
-int dynamic_modint::mod = 0;
+int dynamic_modint::mod = 0;//ここいじるといいかも
 
 ostream &operator<<(ostream &os, const dynamic_modint &a) { return os << a.val(); }
 

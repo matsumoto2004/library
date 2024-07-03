@@ -284,3 +284,25 @@ vector <point> convex_hull(vector <point> v) {
     res.resize(k - 1);
     return res;
 }
+
+
+/*以下，not_verified*/
+vector <point> convex_hull_upper(vector <point> v){
+    sort(all(v));
+    int n = v.size(), k = 0;
+    vector <point> res(2 * n);
+    for (int i = 0; i < n; res[k++] = v[i++])
+        while (k > 1 && ccw(res[k - 2], res[k - 1], v[i]) <= 0) k--;
+    res.resize(k - 1);
+    return res;
+}
+
+vector <point> convex_hull_lower(vector <point> v){
+    sort(all(v));
+    int n = v.size(), k = 0;
+    vector <point> res(2 * n);
+    for (int i = n - 2, t = k; i >= 0; res[k++] = v[i--])
+        while (k > t && ccw(res[k - 2], res[k - 1], v[i]) <= 0) k--;
+    res.resize(k - 1);
+    return res;   
+}

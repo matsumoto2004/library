@@ -229,6 +229,18 @@ public:
         return res *= k;
     }
 
+    //間違ってるかも!!
+    fps &operator/=(mint k) {
+        rep(i, this->size())(*this)[i] /= k;
+        return *this;
+    }
+
+    fps operator/(mint k) const {
+        fps res(*this);
+        return res /= k;
+    }
+    //
+
 
 //    // P /= (ax + b)
 //    constexpr void divide(T a = 0, T b = 1) {
